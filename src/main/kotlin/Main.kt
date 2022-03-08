@@ -1,13 +1,13 @@
 fun main() {
-    var firstGeneration = initialGeneration()
-    printGeneration(firstGeneration)
+    var parentGeneration = initialGeneration()
+    printGeneration(parentGeneration)
     var isEvolving = true
 
     while (isEvolving) {
-        val nextGeneration = calculateNextGeneration(firstGeneration)
+        val nextGeneration = calculateNextGeneration(parentGeneration)
         printGeneration(nextGeneration)
-        isEvolving = !nextGeneration.contentEquals(firstGeneration)
-        firstGeneration = nextGeneration
+        isEvolving = !nextGeneration.contentEquals(parentGeneration)
+        parentGeneration = nextGeneration
     }
 }
 
