@@ -21,8 +21,8 @@ fun initialGeneration(): Array<IntArray> {
     )
 }
 
-fun printGeneration(firstGeneration: Array<IntArray>) {
-    for (row in firstGeneration) {
+fun printGeneration(generation: Array<IntArray>) {
+    for (row in generation) {
         print("|")
         for (cell in row) {
             print(if (cell == 1) "*|" else " |")
@@ -51,13 +51,13 @@ fun calculateNextGeneration(parentGeneration: Array<IntArray>): Array<IntArray> 
     return nextGeneration
 }
 
-fun countNeighbors(x: Int, y: Int, parentGeneration: Array<IntArray>): Int {
+fun countNeighbors(x: Int, y: Int, generation: Array<IntArray>): Int {
     var neighbors = 0
     for (i in x - 1..x + 1) {
         for (j in y - 1..y + 1) {
-            val isWithinBounds = i >= 0 && j >= 0 && i < parentGeneration.size && j < parentGeneration[i].size
+            val isWithinBounds = i >= 0 && j >= 0 && i < generation.size && j < generation[i].size
             val isNotSelf = !((i == x) && (j == y))
-            if (isWithinBounds && isNotSelf && parentGeneration[i][j] == 1) {
+            if (isWithinBounds && isNotSelf && generation[i][j] == 1) {
                 neighbors++
             }
         }
