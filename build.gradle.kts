@@ -5,7 +5,7 @@ plugins {
     application
 }
 
-group = "me.jan"
+group = "com.github.jlengenfeld"
 version = "1.0-SNAPSHOT"
 
 repositories {
